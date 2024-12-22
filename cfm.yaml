@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: db-cfm
+data:
+  key1: "value1"
+  #db_host: "localhost"
+  db_user: "taa-user"
+  db_password: "12345678"
+  db_name: "taadb"

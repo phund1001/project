@@ -16,12 +16,12 @@ spec:
     spec:
       containers:
       - name: taa-nginx
-        image: nginx
+        image: phund1001/nginix:latest
         resources:
         ports:
         - containerPort: 80
       -name: taa-php
-        image: php
+        image: phund1001/php:latest
   strategy:
     type: RollingUpdate
     rollingUpdate:

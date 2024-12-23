@@ -5,8 +5,11 @@ metadata:
   labels:
     name: taa
 spec:
+  type: NodePort
   selector:
     matchLabels:
       app: taa
-  endpoints:
-    - port: web
+  ports: 
+    - protocol: tcp
+      port: 80
+      targetPort: 80

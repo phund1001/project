@@ -22,6 +22,27 @@ spec:
         - containerPort: 80
       -name: taa-php
         image: phund1001/php:latest
+        env:
+        - name: DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: db-cfm
+              key: db_host
+        - name: DB_DATABASE
+          valueFrom:
+            configMapKeyRef:
+              name: db-cfm
+              key: db_name
+        - name: DB_USERNAME
+          valueFrom:
+            configMapKeyRef:
+              name: db-cfm
+              key: db_user
+        - name: DB_PASSWORD
+          valueFrom:
+            configMapKeyRef:
+              name: db-cfm
+              key: db_pw
   strategy:
     type: RollingUpdate
     rollingUpdate:

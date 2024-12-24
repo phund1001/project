@@ -24,20 +24,20 @@ spec:
         - name: MYSQL_ROOT_PASSWORD
           valueFrom:
             configMapKeyRef:
-              name: taa-cfm
+              name: db-cfm
               key: db_pw
         - name: MYSQL_PASSWORD
           valueFrom:
             configMapKeyRef:
-              name: taa-cfm
+              name: db-cfm
               key: db_pw
         - name: MYSQL_USER
           valueFrom:
             configMapKeyRef:
-              name: taa-cfm
+              name: db-cfm
               key: db_user
         - name: MYSQL_DATABASE
           valueFrom:
             configMapKeyRef:
-              name: taa-cfm
+              name: db-cfm
               key: db_name

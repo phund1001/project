@@ -8,7 +8,7 @@ spec:
   type: NodePort
   selector:
     matchLabels:
-      app: taa
+      app: adminer
   ports:
     - protocol: TCP
       port: 80

@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: adminer-deployment
+  name: adminer-dpl
   labels:
     app: adminer
 spec:
@@ -16,7 +16,7 @@ spec:
     spec:
        containers:
       - name: adminer
-        image: adminer
+        image: adminer:latest
         resources:
         ports:
         - containerPort: 8080

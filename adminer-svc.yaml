@@ -5,8 +5,11 @@ metadata:
   labels:
     name: adminer
 spec:
+  type: NodePort
   selector:
     matchLabels:
-      app: adminer
-  endpoints:
-    - port: web
+      app: taa
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080

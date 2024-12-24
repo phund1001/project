@@ -5,7 +5,7 @@ metadata:
   labels:
     app: db
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: db
@@ -15,7 +15,7 @@ spec:
         app: db
     spec:
       containers:
-      - name: mysql
+      - name: db
         image: mysql
         resources:
         ports:
@@ -24,7 +24,9 @@ spec:
         - name: MYSQL_ROOT_PASSWORD
           value: "12345678"
         - name: MSQL_USER
-          value: 
+          value: "taa-user"
+        - name: MSQL_PASSWORD
+          value: "taa@1234"
   strategy:
     type: RollingUpdate
     rollingUpdate:

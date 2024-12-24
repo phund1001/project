@@ -22,13 +22,22 @@ spec:
         - containerPort: 3306
       env:
         - name: MYSQL_ROOT_PASSWORD
-          value: "12345678"
-        - name: MSQL_USER
-          value: "taa-user"
-        - name: MSQL_PASSWORD
-          value: "taa@1234"
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 2
+          valueFrom:
+            configMapKeyRef:
+              name: taa-cfm
+              key: db_pw
+        - name: MYSQL_PASSWORD
+          valueFrom:
+            configMapKeyRef:
+              name: taa-cfm
+              key: db_pw
+        - name: MYSQL_USER
+          valueFrom:
+            configMapKeyRef:
+              name: taa-cfm
+              key: db_user
+        - name: MYSQL_DATABASE
+          valueFrom:
+            configMapKeyRef:
+              name: taa-cfm
+              key: db_name

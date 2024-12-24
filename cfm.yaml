@@ -3,8 +3,8 @@ kind: ConfigMap
 metadata:
   name: db-cfm
 data:
-  key1: "value1"
-  #db_host: "localhost"
+  #key1: "value1"
+  db_host: "db-svc"
   db_user: "taa-user"
   db_password: "12345678"
-  db_name: "taadb"
+  db_name: "taa-db"

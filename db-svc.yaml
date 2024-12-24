@@ -3,13 +3,13 @@ kind: Service
 metadata:
   name: db-svc
   labels:
-    name: taa
+    name: db
 spec:
   type: ClusterIP
   selector:
     matchLabels:
-      app: taa
+      app: db
   ports: 
-    - protocol: tcp
+    - protocol: TCP
       port: 3306
       targetPort: 3306
